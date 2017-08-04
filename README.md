@@ -10,9 +10,9 @@ License Apache 2.0
 
 ## Ant Example
 
-One of the most ubiquitous Java applications Ant will be used here to illustrate how to create the Options required.
+The Java applications Ant will be used here to illustrate how to create the Options required.
 
-The following is the definition of the options using the Option annotations.
+The following is the definition of the options using the Option annotations:
 
 ```java
 import com.qwazr.cli.Option;
@@ -71,7 +71,7 @@ public class AntExample {
 }
 ```
 
-The parse method of Parser<> is used to parse the command line arguments.
+The parse method of Parser<T> is used to parse the command line arguments.
 
 It returns a new "AntExample" instance and fill the properties with the detected arguments.
 
@@ -97,7 +97,7 @@ The parser can also print a formatted help message to System.out.
 
 Here is an example of output:
 
-```shell
+```
 usage: ant
  -buildfile <file>       use given buildfile
  -D <property=value>     use value for given property
@@ -123,6 +123,22 @@ usage: ant
     <artifactId>commons-cli-annotations</artifactId>
     <version>1.0-SNAPSHOT</version>
 </dependency>
+```
+
+The snapshot repository is stored at sonatype.
+If you use the snapshot version add this repository configuration:
+
+```xml
+<distributionManagement>
+    <snapshotRepository>
+        <id>ossrh</id>
+        <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+    </snapshotRepository>
+    <repository>
+        <id>ossrh</id>
+        <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+    </repository>
+</distributionManagement>
 ```
 
 ## JAVADOC
