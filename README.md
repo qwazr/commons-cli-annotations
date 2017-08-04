@@ -1,29 +1,12 @@
 # commons-cli-annotations
 
+[![Coverage Status](https://coveralls.io/repos/github/qwazr/commons-cli-annotations/badge.svg?branch=master)](https://coveralls.io/github/qwazr/commons-cli-annotations?branch=master)
+
 This library add support of annotations to Apache Commons CLI.
 
 License Apache 2.0
 
 ## Ant Example
-
-```shell
-ant [options] [target [target2 [target3] ...]]
-  Options: 
-  -help                  print this message
-  -projecthelp           print project help information
-  -version               print the version information and exit
-  -quiet                 be extra quiet
-  -verbose               be extra verbose
-  -debug                 print debugging information
-  -emacs                 produce logging information without adornments
-  -logfile <file>        use given file for log
-  -logger <classname>    the class which is to perform logging
-  -listener <classname>  add an instance of class as a project listener
-  -buildfile <file>      use given buildfile
-  -D<property>=<value>   use value for given property
-  -find <file>           search for buildfile towards the root of the
-                         filesystem and use it
-```
 
 ```java
 import com.qwazr.cli.Option;
@@ -92,8 +75,30 @@ public class MyApplication {
        
         // Parse the arguments
         AntExample antExample = parser.parse(args);
+        if (antExample.help)
+        	parser.printHelp("ant");
     }
 }
+```
+
+The parser will print this message to System.out:
+
+```shell
+usage: ant
+ -buildfile <file>       use given buildfile
+ -D <property=value>     use value for given property
+ -debug                  print debugging information
+ -emacs                  produce logging information without adornments
+ -find <arg>             search for buildfile towards the root of the
+                         filesystem and use it
+ -help                   print this message
+ -listener <classname>   add an instance of class as a project listener
+ -logfile <file>         use given file for log
+ -logger <classname>     the class which it to perform logging
+ -projecthelp            print project help information
+ -quiet                  be extra quiet
+ -verbose                be extra verbose
+ -version                print the version information and exit
 ```
 
 ## Maven integration

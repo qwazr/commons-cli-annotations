@@ -58,4 +58,17 @@ public class OptionTest {
 		lsExample = parser.parse("--block-size=10");
 		Assert.assertEquals(10, lsExample.blockSize);
 	}
+
+	@Test
+	public void printHelpTest() throws ParseException, ReflectiveOperationException {
+		final Parser<AntExample> parser = new Parser<>(AntExample.class);
+
+		AntExample antExample = parser.parse("-help");
+		Assert.assertNotNull(parser.getOptions());
+
+		Assert.assertTrue(antExample.help);
+		if (antExample.help)
+			parser.printHelp("ant");
+
+	}
 }

@@ -20,6 +20,7 @@ import com.qwazr.binder.setter.FieldSetter;
 import com.qwazr.utils.AnnotationsUtils;
 import org.apache.commons.cli.CommandLine;
 import org.apache.commons.cli.DefaultParser;
+import org.apache.commons.cli.HelpFormatter;
 import org.apache.commons.cli.Options;
 import org.apache.commons.cli.ParseException;
 
@@ -113,4 +114,11 @@ public class Parser<T> {
 		return options;
 	}
 
+	public void printHelp(HelpFormatter formatter, String command) {
+		formatter.printHelp(command, options);
+	}
+
+	public void printHelp(String command) {
+		printHelp(new HelpFormatter(), command);
+	}
 }
