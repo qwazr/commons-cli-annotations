@@ -120,6 +120,9 @@
                 <configuration>
                     <reportOutputDirectory>docs</reportOutputDirectory>
                     <failOnError>false</failOnError>
+                    <header>
+                        &lt;a href="https://github.com/qwazr/commons-cli-annotations"&gt;github.com/qwazr/commons-cli-annotations&lt;/a&gt;
+                    </header>
                 </configuration>
                 <executions>
                     <execution>
