@@ -127,4 +127,4 @@ usage: ant
 
 ## JAVADOC
 
-[Javadoc API documentation](docs/apidocs/index.html)
+[Javadoc API documentation](https://qwazr.github.io/commons-cli-annotations/apidocs/)
