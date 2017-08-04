@@ -2,11 +2,15 @@
 
 [![Coverage Status](https://coveralls.io/repos/github/qwazr/commons-cli-annotations/badge.svg?branch=master)](https://coveralls.io/github/qwazr/commons-cli-annotations?branch=master)
 
-This library add support of annotations to Apache Commons CLI.
+This library let you use annotations to parse command line arguments.
+It use the robust [Apache Commons CLI](https://commons.apache.org/proper/commons-cli/) in backend.
 
 License Apache 2.0
 
 ## Ant Example
+
+One of the most ubiquitous Java applications Ant will be used here to illustrate how to create the Options required.
+The following is the definition of the options using the Option annotations.
 
 ```java
 import com.qwazr.cli.Option;
@@ -65,7 +69,12 @@ public class AntExample {
 }
 ```
 
+The parse method of Parser<> is used to parse the command line arguments.
+It returns a new "AntExample" instance and fill the properties with the detected arguments.
+
 ```java
+import com.qwazr.cli.Parser;
+
 public class MyApplication {
 	
     public static void main(String[] args) {
@@ -81,7 +90,8 @@ public class MyApplication {
 }
 ```
 
-The parser will print this message to System.out:
+The parser can also print a formatted help message to System.out.
+Here is an example of output:
 
 ```shell
 usage: ant
