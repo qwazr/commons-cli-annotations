@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.qwazr.cliargs;
+package com.qwazr.cli;
 
 import com.qwazr.utils.StringUtils;
 
@@ -26,22 +26,25 @@ import java.lang.annotation.Target;
 @Target({ ElementType.FIELD })
 public @interface Option {
 
-	String name();
+	String opt() default StringUtils.EMPTY;
 
 	String desc() default StringUtils.EMPTY;
 
-	String argName() default StringUtils.EMPTY;
-
-	boolean hasArg() default true;
-
 	String longOpt() default StringUtils.EMPTY;
+
+	boolean hasArg() default false;
+
+	int numberOfArgs() default UNINITIALIZED;
+
+	String argName() default StringUtils.EMPTY;
 
 	boolean optionalArg() default false;
 
 	boolean required() default false;
 
-	Class<?> type() default String.class;
-
 	char valueSeparator() default '=';
+
+	int UNLIMITED = org.apache.commons.cli.Option.UNLIMITED_VALUES;
+	int UNINITIALIZED = org.apache.commons.cli.Option.UNINITIALIZED;
 
 }
