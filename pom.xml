@@ -4,7 +4,7 @@
 
     <groupId>com.qwazr</groupId>
     <artifactId>commons-cli-annotations</artifactId>
-    <version>1.0</version>
+    <version>1.1-SNAPSHOT</version>
 
     <url>https://github.com/qwazr/commons-cli-annotations</url>
 
@@ -36,7 +36,7 @@
         <connection>scm:git:git@github.com:qwazr/commons-cli-annotations.git</connection>
         <developerConnection>scm:git:git@github.com:qwazr/commons-cli-annotations.git</developerConnection>
         <url>git@github.com:qwazr/commons-cli-annotations.git</url>
-        <tag>v1.0</tag>
+        <tag>HEAD</tag>
     </scm>
     <issueManagement>
         <url>https://github.com/qwazr/commons-cli-annotations/issues</url>
