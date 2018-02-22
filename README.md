@@ -121,24 +121,8 @@ usage: ant
  <dependency>
     <groupId>com.qwazr</groupId>
     <artifactId>commons-cli-annotations</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0.1</version>
 </dependency>
-```
-
-The snapshot repository is stored at sonatype.
-If you use the snapshot version add this repository configuration:
-
-```xml
-<distributionManagement>
-    <snapshotRepository>
-        <id>ossrh</id>
-        <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-    </snapshotRepository>
-    <repository>
-        <id>ossrh</id>
-        <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
-    </repository>
-</distributionManagement>
 ```
 
 ## JAVADOC
